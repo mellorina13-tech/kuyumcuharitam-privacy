@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kuyumcu Haritam - Gizlilik Politikası">
+    <title>Gizlilik Politikası - Kuyumcu Haritam</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .update-date {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+
+        .update-date strong {
+            color: #d97706;
+        }
+
+        h2 {
+            color: #f59e0b;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #f59e0b;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #d97706;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            background: #fef3c7;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .contact-box {
+            background: #f3f4f6;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border: 2px solid #e5e7eb;
+        }
+
+        .contact-box h3 {
+            margin-top: 0;
+            color: #1f2937;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .contact-info svg {
+            width: 24px;
+            height: 24px;
+            fill: #f59e0b;
+        }
+
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        .icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏆 Kuyumcu Haritam</h1>
+            <p>Gizlilik Politikası</p>
+        </div>
+
+        <div class="content">
+            <div class="update-date">
+                <strong>Son Güncelleme:</strong> 1 Ocak 2026
+            </div>
+
+            <p>
+                Kuyumcu Haritam uygulamasını kullandığınız için teşekkür ederiz. Gizliliğiniz bizim için önemlidir. 
+                Bu Gizlilik Politikası, uygulamayı kullanırken kişisel bilgilerinizin nasıl toplandığını, 
+                kullanıldığını ve korunduğunu açıklamaktadır.
+            </p>
+
+            <h2>1. Toplanan Bilgiler</h2>
+            
+            <h3>1.1 Kullanıcı Tarafından Sağlanan Bilgiler</h3>
+            <ul>
+                <li><strong>Hesap Bilgileri:</strong> E-posta adresi, kullanıcı adı, şifre</li>
+                <li><strong>Profil Bilgileri:</strong> Profil fotoğrafı, hakkında bilgisi</li>
+                <li><strong>İçerik Bilgileri:</strong> Paylaştığınız kuyumcu bilgileri, fiyat güncellemeleri, sohbet mesajları</li>
+            </ul>
+
+            <h3>1.2 Otomatik Olarak Toplanan Bilgiler</h3>
+            <ul>
+                <li><strong>Konum Bilgileri:</strong> Harita özelliklerini kullanırken cihazınızın konumu (sadece izninizle)</li>
+                <li><strong>Cihaz Bilgileri:</strong> Cihaz modeli, işletim sistemi versiyonu, uygulama versiyonu</li>
+                <li><strong>Kullanım Bilgileri:</strong> Uygulama içi aktiviteler, tıklamalar, kullanım süreleri</li>
+            </ul>
+
+            <div class="highlight">
+                <strong>⚠️ Önemli Not:</strong> Konum bilgileriniz sadece sizin izninizle toplanır ve harita özelliklerini 
+                kullanmanız için gereklidir. İstediğiniz zaman cihaz ayarlarınızdan konum izinlerini değiştirebilirsiniz.
+            </div>
+
+            <h2>2. Bilgilerin Kullanım Amaçları</h2>
+            
+            <p>Topladığımız bilgileri şu amaçlarla kullanırız:</p>
+            <ul>
+                <li>Uygulama hizmetlerini sağlamak ve geliştirmek</li>
+                <li>Kullanıcı hesaplarını yönetmek ve kimlik doğrulaması yapmak</li>
+                <li>Kuyumcu haritası ve fiyat bilgilerini güncellemek</li>
+                <li>Kullanıcılar arası iletişimi sağlamak (sohbet özelliği)</li>
+                <li>Teknik destek ve müşteri hizmetleri sunmak</li>
+                <li>Uygulama güvenliğini sağlamak ve kötüye kullanımı önlemek</li>
+                <li>Yasal yükümlülükleri yerine getirmek</li>
+            </ul>
+
+            <h2>3. Bilgi Paylaşımı</h2>
+            
+            <p>Kişisel bilgileriniz aşağıdaki durumlarda paylaşılabilir:</p>
+            
+            <h3>3.1 Diğer Kullanıcılarla Paylaşım</h3>
+            <ul>
+                <li>Kullanıcı adınız ve profil fotoğrafınız diğer kullanıcılara görünür</li>
+                <li>Paylaştığınız kuyumcu bilgileri ve fiyat güncellemeleri herkese açıktır</li>
+                <li>Sohbet mesajlarınız diğer kullanıcılarla paylaşılır</li>
+            </ul>
+
+            <h3>3.2 Hizmet Sağlayıcılar</h3>
+            <ul>
+                <li>Supabase (veritabanı ve kimlik doğrulama hizmetleri)</li>
+                <li>Google Maps API (harita hizmetleri)</li>
+                <li>Bulut depolama hizmetleri (profil fotoğrafları için)</li>
+            </ul>
+
+            <h3>3.3 Yasal Gereklilikler</h3>
+            <p>
+                Yasal bir zorunluluk, mahkeme kararı veya kamu otoritelerinin talebi durumunda 
+                bilgilerinizi paylaşabiliriz.
+            </p>
+
+            <h2>4. Veri Güvenliği</h2>
+            
+            <p>Kişisel bilgilerinizi korumak için aşağıdaki güvenlik önlemlerini alıyoruz:</p>
+            <ul>
+                <li>Şifreleriniz güvenli hash algoritmaları ile şifrelenir</li>
+                <li>Veriler SSL/TLS şifreleme ile iletilir</li>
+                <li>Supabase Row Level Security (RLS) politikaları kullanılır</li>
+                <li>Düzenli güvenlik güncellemeleri yapılır</li>
+                <li>Yetkisiz erişimlere karşı izleme sistemleri vardır</li>
+            </ul>
+
+            <div class="highlight">
+                <strong>🔒 Güvenlik:</strong> Hiçbir internet iletimi veya elektronik depolama yöntemi %100 güvenli değildir. 
+                Makul ölçüde güvenlik sağlamaya çalışsak da, mutlak güvenliği garanti edemeyiz.
+            </div>
+
+            <h2>5. Kullanıcı Hakları</h2>
+            
+            <p>KVKK (Kişisel Verilerin Korunması Kanunu) kapsamında aşağıdaki haklara sahipsiniz:</p>
+            <ul>
+                <li><strong>Bilgi Alma:</strong> Hangi kişisel verilerinizin işlendiğini öğrenme hakkı</li>
+                <li><strong>Erişim:</strong> Kişisel verilerinize erişim ve kopyasını talep etme hakkı</li>
+                <li><strong>Düzeltme:</strong> Yanlış veya eksik bilgilerinizi düzeltme hakkı</li>
+                <li><strong>Silme:</strong> Hesabınızı ve verilerinizi silme hakkı</li>
+                <li><strong>İtiraz:</strong> Veri işleme faaliyetlerine itiraz etme hakkı</li>
+                <li><strong>Veri Taşınabilirliği:</strong> Verilerinizi yapılandırılmış formatta alma hakkı</li>
+            </ul>
+
+            <h2>6. Çocukların Gizliliği</h2>
+            
+            <p>
+                Uygulamamız 13 yaşın altındaki çocuklara yönelik değildir. 13 yaşından küçük çocuklardan 
+                bilerek kişisel bilgi toplamıyoruz. Eğer 13 yaşından küçük bir çocuğun kişisel bilgilerini 
+                topladığımızı fark ederseniz, lütfen bizimle iletişime geçin.
+            </p>
+
+            <h2>7. Çerezler ve İzleme Teknolojileri</h2>
+            
+            <p>Uygulamamız şu teknolojileri kullanabilir:</p>
+            <ul>
+                <li><strong>Oturum Çerezleri:</strong> Giriş durumunuzu korumak için</li>
+                <li><strong>Tercih Çerezleri:</strong> Uygulama ayarlarınızı hatırlamak için</li>
+                <li><strong>Analitik:</strong> Uygulama kullanımını anlamak için (anonim)</li>
+            </ul>
+
+            <h2>8. Üçüncü Taraf Bağlantılar</h2>
+            
+            <p>
+                Uygulamamız üçüncü taraf web sitelerine bağlantılar içerebilir. Bu sitelerin gizlilik 
+                uygulamalarından sorumlu değiliz. Bu siteleri ziyaret ettiğinizde gizlilik politikalarını 
+                okumanızı öneririz.
+            </p>
+
+            <h2>9. Veri Saklama Süresi</h2>
+            
+            <ul>
+                <li><strong>Hesap Bilgileri:</strong> Hesabınızı silene kadar saklanır</li>
+                <li><strong>Sohbet Mesajları:</strong> Siz silene kadar saklanır</li>
+                <li><strong>Kuyumcu Bilgileri:</strong> Siz silene kadar saklanır</li>
+                <li><strong>Log Kayıtları:</strong> Maksimum 90 gün saklanır</li>
+            </ul>
+
+            <h2>10. Hesap Silme</h2>
+            
+            <p>Hesabınızı ve tüm verilerinizi silmek için:</p>
+            <ol>
+                <li>Uygulama içinden "Ayarlar" menüsüne gidin</li>
+                <li>"Hesabı Sil" seçeneğine tıklayın</li>
+                <li>İşlemi onaylayın</li>
+            </ol>
+            <p>
+                Hesap silme işlemi geri alınamaz ve tüm verileriniz kalıcı olarak silinir. 
+                Yasal saklama yükümlülüğü olan veriler hariç tutulur.
+            </p>
+
+            <h2>11. Değişiklikler</h2>
+            
+            <p>
+                Bu Gizlilik Politikası'nı zaman zaman güncelleyebiliriz. Önemli değişiklikler olduğunda 
+                sizi uygulama içi bildirim veya e-posta ile bilgilendireceğiz. Güncel politikayı düzenli 
+                olarak kontrol etmenizi öneririz.
+            </p>
+
+            <h2>12. İletişim</h2>
+            
+            <div class="contact-box">
+                <h3>Sorularınız mı var?</h3>
+                <p>
+                    Gizlilik Politikamız veya kişisel verilerinizin işlenmesi hakkında sorularınız varsa, 
+                    bizimle iletişime geçebilirsiniz:
+                </p>
+                
+                <div class="contact-info">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    <strong>E-posta:</strong> memiscan32@gmail.com
+                </div>
+                
+                <div class="contact-info">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <strong>Uygulama:</strong> Kuyumcu Haritam - Ayarlar > Destek
+                </div>
+                
+                <p style="margin-top: 15px; font-size: 0.9em; color: #6b7280;">
+                    Talebinize en kısa sürede yanıt vereceğiz (maksimum 30 gün içinde).
+                </p>
+            </div>
+
+            <div class="highlight" style="margin-top: 30px;">
+                <strong>📋 KVKK Uyumu:</strong> Bu uygulama, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) 
+                ve ilgili mevzuata uygun olarak geliştirilmiştir. Kişisel verileriniz, yasal çerçevede ve 
+                güvenli bir şekilde işlenmektedir.
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 Kuyumcu Haritam. Tüm hakları saklıdır.</p>
+            <p style="margin-top: 10px; font-size: 0.85em; opacity: 0.8;">
+                Bu uygulama bağımsız bir proje olup, herhangi bir kuyumcu şirketi ile bağlantılı değildir.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
