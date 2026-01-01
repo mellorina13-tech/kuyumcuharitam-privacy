@@ -85,7 +85,7 @@
             text-align: justify;
         }
 
-        ul {
+        ul, ol {
             margin-left: 20px;
             margin-bottom: 15px;
         }
@@ -101,6 +101,11 @@
             border-radius: 10px;
             margin: 20px 0;
             border-left: 4px solid #f59e0b;
+        }
+
+        .highlight-red {
+            background: #fee2e2;
+            border-left-color: #dc2626;
         }
 
         .contact-box {
@@ -137,12 +142,14 @@
             font-size: 0.9em;
         }
 
-        .icon {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            margin-right: 5px;
-            vertical-align: middle;
+        a {
+            color: #f59e0b;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
@@ -156,6 +163,10 @@
 
             h2 {
                 font-size: 1.5em;
+            }
+
+            body {
+                padding: 10px;
             }
         }
     </style>
@@ -192,6 +203,7 @@
                 <li><strong>Konum Bilgileri:</strong> Harita özelliklerini kullanırken cihazınızın konumu (sadece izninizle)</li>
                 <li><strong>Cihaz Bilgileri:</strong> Cihaz modeli, işletim sistemi versiyonu, uygulama versiyonu</li>
                 <li><strong>Kullanım Bilgileri:</strong> Uygulama içi aktiviteler, tıklamalar, kullanım süreleri</li>
+                <li><strong>Reklam Bilgileri:</strong> Reklam tanımlayıcıları, reklam etkileşimleri (AdMob aracılığıyla)</li>
             </ul>
 
             <div class="highlight">
@@ -209,6 +221,7 @@
                 <li>Kullanıcılar arası iletişimi sağlamak (sohbet özelliği)</li>
                 <li>Teknik destek ve müşteri hizmetleri sunmak</li>
                 <li>Uygulama güvenliğini sağlamak ve kötüye kullanımı önlemek</li>
+                <li>Reklamları göstermek ve kişiselleştirmek</li>
                 <li>Yasal yükümlülükleri yerine getirmek</li>
             </ul>
 
@@ -225,9 +238,10 @@
 
             <h3>3.2 Hizmet Sağlayıcılar</h3>
             <ul>
-                <li>Supabase (veritabanı ve kimlik doğrulama hizmetleri)</li>
-                <li>Google Maps API (harita hizmetleri)</li>
-                <li>Bulut depolama hizmetleri (profil fotoğrafları için)</li>
+                <li><strong>Supabase:</strong> Veritabanı ve kimlik doğrulama hizmetleri</li>
+                <li><strong>Google Maps API:</strong> Harita hizmetleri</li>
+                <li><strong>Google AdMob:</strong> Reklam gösterimi ve kişiselleştirme</li>
+                <li><strong>Bulut Depolama:</strong> Profil fotoğrafları için</li>
             </ul>
 
             <h3>3.3 Yasal Gereklilikler</h3>
@@ -262,6 +276,7 @@
                 <li><strong>Silme:</strong> Hesabınızı ve verilerinizi silme hakkı</li>
                 <li><strong>İtiraz:</strong> Veri işleme faaliyetlerine itiraz etme hakkı</li>
                 <li><strong>Veri Taşınabilirliği:</strong> Verilerinizi yapılandırılmış formatta alma hakkı</li>
+                <li><strong>Reklam Tercihleri:</strong> Kişiselleştirilmiş reklamları kapatma hakkı</li>
             </ul>
 
             <h2>6. Çocukların Gizliliği</h2>
@@ -278,10 +293,97 @@
             <ul>
                 <li><strong>Oturum Çerezleri:</strong> Giriş durumunuzu korumak için</li>
                 <li><strong>Tercih Çerezleri:</strong> Uygulama ayarlarınızı hatırlamak için</li>
-                <li><strong>Analitik:</strong> Uygulama kullanımını anlamak için (anonim)</li>
+                <li><strong>Analitik Çerezleri:</strong> Uygulama kullanımını anlamak için (anonim)</li>
+                <li><strong>Reklam Çerezleri:</strong> İlgili reklamları göstermek için (AdMob)</li>
             </ul>
 
-            <h2>8. Üçüncü Taraf Bağlantılar</h2>
+            <h2>8. Reklam Hizmetleri (Google AdMob)</h2>
+
+            <p>
+                Uygulamamız, Google AdMob aracılığıyla üçüncü taraf reklamlar gösterir. 
+                Bu reklamlar kişiselleştirilmiş veya kişiselleştirilmemiş olabilir.
+            </p>
+
+            <h3>8.1 Google AdMob Tarafından Toplanan Bilgiler</h3>
+            <ul>
+                <li><strong>Reklam Tanımlayıcıları:</strong> Benzersiz cihaz tanımlayıcıları (Advertising ID)</li>
+                <li><strong>Kullanım Bilgileri:</strong> Reklam görüntüleme ve tıklama verileri</li>
+                <li><strong>Cihaz Bilgileri:</strong> Cihaz türü, işletim sistemi, ekran çözünürlüğü</li>
+                <li><strong>Konum Bilgileri:</strong> Yaklaşık konum (şehir seviyesi)</li>
+                <li><strong>IP Adresi:</strong> Anonim hale getirilmiş IP adresi</li>
+            </ul>
+
+            <h3>8.2 Kişiselleştirilmiş Reklamlar</h3>
+            <p>
+                Google AdMob, ilgi alanlarınıza göre reklamlar gösterebilir. Bu reklamlar, 
+                uygulama kullanımınız ve diğer Google hizmetlerindeki aktivitelerinize dayanır.
+            </p>
+
+            <div class="highlight">
+                <strong>⚙️ Kişiselleştirilmiş Reklamları Kapatma:</strong>
+                <br><br>
+                <strong>Android Cihazlarda:</strong>
+                <ol style="margin-left: 20px; margin-top: 10px;">
+                    <li>Ayarlar → Google → Reklamlar</li>
+                    <li>"Reklam kişiselleştirme özelliğini kapat" seçeneğini aktifleştirin</li>
+                </ol>
+                <br>
+                <strong>iOS Cihazlarda:</strong>
+                <ol style="margin-left: 20px; margin-top: 10px;">
+                    <li>Ayarlar → Gizlilik → Apple Reklamcılığı</li>
+                    <li>"Kişiselleştirilmiş Reklamları Sınırla" seçeneğini açın</li>
+                </ol>
+            </div>
+
+            <h3>8.3 Reklam Ortakları</h3>
+            <p>Google AdMob aracılığıyla reklamlarını gösteren üçüncü taraf şirketler şunları içerebilir:</p>
+            <ul>
+                <li>Google LLC</li>
+                <li>AdMob sertifikalı reklam ağları</li>
+                <li>Diğer programatik reklam ortakları</li>
+            </ul>
+
+            <h3>8.4 Çocuklara Yönelik Reklamlar</h3>
+            <p>
+                Uygulamamız 13 yaş altı çocuklara yönelik olmadığından, Google'ın 
+                <strong>COPPA (Çocukların Çevrimiçi Gizlilik Koruma Yasası)</strong> kurallarına uygun olarak 
+                çocuklara yönelik davranısal reklam gösterilmez.
+            </p>
+
+            <h3>8.5 Google'ın Gizlilik Politikası</h3>
+            <p>
+                Google AdMob'un veri toplama ve kullanım uygulamaları hakkında daha fazla bilgi için:
+            </p>
+            <ul>
+                <li>
+                    <a href="https://policies.google.com/privacy" target="_blank">
+                        Google Gizlilik Politikası
+                    </a>
+                </li>
+                <li>
+                    <a href="https://policies.google.com/technologies/partner-sites" target="_blank">
+                        Google İş Ortağı Siteleri
+                    </a>
+                </li>
+                <li>
+                    <a href="https://support.google.com/admob/answer/6128543" target="_blank">
+                        AdMob ve Gizlilik
+                    </a>
+                </li>
+            </ul>
+
+            <h3>8.6 Reklamsız Deneyim</h3>
+            <p>
+                Gelecekte, reklamları kaldırmak için premium abonelik veya tek seferlik satın alma 
+                seçeneği sunabiliriz. Bu özellik eklendiğinde burası güncellenecektir.
+            </p>
+
+            <div class="highlight highlight-red">
+                <strong>⚠️ Önemli Bilgi:</strong> Reklam gösterimi, uygulamanın ücretsiz olarak sunulmasını 
+                sağlar. Reklamlar olmadan uygulamayı sürdürülebilir şekilde geliştirmemiz mümkün olmayacaktır.
+            </div>
+
+            <h2>9. Üçüncü Taraf Bağlantılar</h2>
             
             <p>
                 Uygulamamız üçüncü taraf web sitelerine bağlantılar içerebilir. Bu sitelerin gizlilik 
@@ -289,16 +391,17 @@
                 okumanızı öneririz.
             </p>
 
-            <h2>9. Veri Saklama Süresi</h2>
+            <h2>10. Veri Saklama Süresi</h2>
             
             <ul>
                 <li><strong>Hesap Bilgileri:</strong> Hesabınızı silene kadar saklanır</li>
                 <li><strong>Sohbet Mesajları:</strong> Siz silene kadar saklanır</li>
                 <li><strong>Kuyumcu Bilgileri:</strong> Siz silene kadar saklanır</li>
                 <li><strong>Log Kayıtları:</strong> Maksimum 90 gün saklanır</li>
+                <li><strong>Reklam Verileri:</strong> Google AdMob politikalarına göre saklanır (genellikle 18-24 ay)</li>
             </ul>
 
-            <h2>10. Hesap Silme</h2>
+            <h2>11. Hesap Silme</h2>
             
             <p>Hesabınızı ve tüm verilerinizi silmek için:</p>
             <ol>
@@ -311,7 +414,12 @@
                 Yasal saklama yükümlülüğü olan veriler hariç tutulur.
             </p>
 
-            <h2>11. Değişiklikler</h2>
+            <div class="highlight">
+                <strong>📱 Not:</strong> Hesap silme işlemi reklam tanımlayıcınızı sıfırlamaz. 
+                Reklam tanımlayıcınızı sıfırlamak için cihaz ayarlarınıza gitmeniz gerekir.
+            </div>
+
+            <h2>12. Değişiklikler</h2>
             
             <p>
                 Bu Gizlilik Politikası'nı zaman zaman güncelleyebiliriz. Önemli değişiklikler olduğunda 
@@ -319,7 +427,17 @@
                 olarak kontrol etmenizi öneririz.
             </p>
 
-            <h2>12. İletişim</h2>
+            <p>
+                <strong>Önemli değişiklikler şunları içerebilir:</strong>
+            </p>
+            <ul>
+                <li>Yeni veri toplama uygulamaları</li>
+                <li>Veri paylaşım politikalarında değişiklikler</li>
+                <li>Yeni üçüncü taraf hizmet sağlayıcılar</li>
+                <li>Kullanıcı haklarında değişiklikler</li>
+            </ul>
+
+            <h2>13. İletişim</h2>
             
             <div class="contact-box">
                 <h3>Sorularınız mı var?</h3>
@@ -352,12 +470,20 @@
                 ve ilgili mevzuata uygun olarak geliştirilmiştir. Kişisel verileriniz, yasal çerçevede ve 
                 güvenli bir şekilde işlenmektedir.
             </div>
+
+            <div class="highlight" style="margin-top: 20px;">
+                <strong>🇪🇺 GDPR Uyumu:</strong> AB vatandaşları için, bu uygulama Genel Veri Koruma Yönetmeliği 
+                (GDPR) gereksinimlerine uygundur. Verilerinizi silme, dışa aktarma ve işlemeye itiraz etme haklarına sahipsiniz.
+            </div>
         </div>
 
         <div class="footer">
             <p>&copy; 2026 Kuyumcu Haritam. Tüm hakları saklıdır.</p>
             <p style="margin-top: 10px; font-size: 0.85em; opacity: 0.8;">
                 Bu uygulama bağımsız bir proje olup, herhangi bir kuyumcu şirketi ile bağlantılı değildir.
+            </p>
+            <p style="margin-top: 10px; font-size: 0.85em; opacity: 0.8;">
+                Son Güncelleme: 1 Ocak 2026 | Versiyon 1.0
             </p>
         </div>
     </div>
