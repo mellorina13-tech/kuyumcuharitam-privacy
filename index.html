@@ -47,37 +47,21 @@
             position: relative;
         }
 
-        /* Header: Asimetrik ve Geometrik */
+        /* Header: Artık Tek Parça */
         .header {
-            display: grid;
-            grid-template-columns: 3fr 1fr;
-            border-bottom: var(--grid-line);
-        }
-
-        .header-main {
-            padding: 40px;
             background-color: var(--ink-color);
+            border-bottom: var(--grid-line);
+            padding: 50px 40px;
             color: #fff;
-        }
-
-        .header-decoration {
-            background-color: var(--bauhaus-blue);
             display: flex;
             align-items: center;
-            justify-content: center;
-            border-left: var(--grid-line);
-            position: relative;
-            overflow: hidden;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
         }
-        
-        /* Dekoratif Bauhaus Dairesi */
-        .header-decoration::after {
-            content: '';
-            width: 80%;
-            padding-bottom: 80%;
-            background: var(--bauhaus-yellow);
-            border-radius: 50%;
-            border: var(--grid-line);
+
+        .header-content {
+            flex: 1;
         }
 
         h1 {
@@ -85,7 +69,7 @@
             text-transform: uppercase;
             font-size: 3.5rem;
             line-height: 1;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             letter-spacing: 1px;
         }
 
@@ -96,6 +80,7 @@
             opacity: 0.9;
             border-left: 4px solid var(--bauhaus-red);
             padding-left: 15px;
+            max-width: 600px;
         }
 
         /* İçerik Alanı */
@@ -152,7 +137,7 @@
         p {
             margin-bottom: 20px;
             font-size: 1.05rem;
-            max-width: 70ch; /* Okunabilirlik için satır uzunluğu sınırı */
+            max-width: 75ch; /* Okunabilirlik için satır uzunluğu sınırı */
         }
 
         /* Listeler - Kare mermiler */
@@ -271,12 +256,6 @@
 
         /* Mobil Uyumluluk */
         @media (max-width: 768px) {
-            .header {
-                grid-template-columns: 1fr;
-            }
-            .header-decoration {
-                display: none;
-            }
             h1 {
                 font-size: 2.5rem;
             }
@@ -289,18 +268,19 @@
             .container {
                 box-shadow: 8px 8px 0px rgba(0,0,0,1);
             }
+            .header {
+                padding: 30px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <div class="header-main">
-                <h1>Kuyumcu<br>Haritam</h1>
+            <div class="header-content">
+                <h1>Kuyumcu Haritam</h1>
                 <div class="subtitle">GİZLİLİK POLİTİKASI & YASAL METİN</div>
             </div>
-            <div class="header-decoration">
-                </div>
         </div>
 
         <div class="content">
