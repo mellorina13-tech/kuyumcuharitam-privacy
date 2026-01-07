@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kuyumcu Haritam - Gizlilik Politikası">
+    <meta name="description" content="Kuyumcu Haritam - Gizlilik Politikası ve Kullanım Koşulları">
     <title>Gizlilik Politikası - Kuyumcu Haritam</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+
     <style>
         :root {
             /* Bauhaus Renk Paleti */
-            --bg-color: #f4f4f0; /* Kırık beyaz kağıt rengi */
-            --ink-color: #1a1a1a; /* Simsiyah değil, çok koyu antrasit */
+            --bg-color: #f4f4f0;
+            --ink-color: #1a1a1a;
             --bauhaus-red: #D93025;
             --bauhaus-blue: #0047BB;
             --bauhaus-yellow: #FFD500;
@@ -32,22 +34,19 @@
             color: var(--ink-color);
             background-color: var(--bg-color);
             padding: 40px 20px;
-            /* Arkaplana ince bir ızgara dokusu */
             background-image: radial-gradient(var(--ink-color) 1px, transparent 1px);
             background-size: 20px 20px;
         }
 
-        /* Ana İskelet */
         .container {
             max-width: 960px;
             margin: 0 auto;
             background: #fff;
             border: var(--grid-line);
-            box-shadow: 15px 15px 0px rgba(0,0,0,1); /* Sert, retro gölge */
+            box-shadow: 15px 15px 0px rgba(0, 0, 0, 1);
             position: relative;
         }
 
-        /* Header: Artık Tek Parça */
         .header {
             background-color: var(--ink-color);
             border-bottom: var(--grid-line);
@@ -83,12 +82,10 @@
             max-width: 600px;
         }
 
-        /* İçerik Alanı */
         .content {
             padding: 50px;
         }
 
-        /* Tarih Etiketi - Kaşe gibi */
         .update-date {
             display: inline-block;
             background: var(--bauhaus-yellow);
@@ -102,7 +99,6 @@
             transform: rotate(-1deg);
         }
 
-        /* Tipografi Hiyerarşisi */
         h2 {
             font-family: 'Oswald', sans-serif;
             font-size: 2rem;
@@ -113,7 +109,6 @@
             align-items: center;
         }
 
-        /* H2 yanına geometrik kare */
         h2::before {
             content: '';
             display: inline-block;
@@ -137,11 +132,11 @@
         p {
             margin-bottom: 20px;
             font-size: 1.05rem;
-            max-width: 75ch; /* Okunabilirlik için satır uzunluğu sınırı */
+            max-width: 75ch;
         }
 
-        /* Listeler - Kare mermiler */
-        ul, ol {
+        ul,
+        ol {
             margin-left: 0;
             list-style-position: inside;
             margin-bottom: 25px;
@@ -161,7 +156,6 @@
             font-size: 1.2em;
         }
 
-        /* Uyarı Kutuları */
         .highlight {
             background: #fff;
             border: 3px solid var(--ink-color);
@@ -169,7 +163,7 @@
             margin: 30px 0;
             position: relative;
         }
-        
+
         .highlight::before {
             content: '!';
             position: absolute;
@@ -190,12 +184,36 @@
             border-color: var(--bauhaus-red);
             background-color: #fff5f5;
         }
-        
+
         .highlight-red::before {
             background: var(--bauhaus-red);
         }
 
-        /* İletişim Alanı */
+        .highlight-yellow {
+            border-color: var(--bauhaus-yellow);
+            background-color: #fffef0;
+        }
+
+        .highlight-yellow::before {
+            background: var(--bauhaus-yellow);
+            color: var(--ink-color);
+        }
+
+        .disclaimer-box {
+            background: var(--bauhaus-red);
+            color: #fff;
+            padding: 40px;
+            margin: 40px 0;
+            border: 5px solid var(--ink-color);
+            box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.3);
+        }
+
+        .disclaimer-box h3 {
+            color: #fff;
+            text-decoration-color: var(--bauhaus-yellow);
+            font-size: 2rem;
+        }
+
         .contact-box {
             background: var(--ink-color);
             color: #fff;
@@ -216,8 +234,8 @@
             gap: 15px;
             margin: 15px 0;
             padding: 15px;
-            border: 1px solid rgba(255,255,255,0.2);
-            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .contact-info svg {
@@ -226,7 +244,6 @@
             fill: var(--bauhaus-yellow);
         }
 
-        /* Footer */
         .footer {
             border-top: var(--grid-line);
             padding: 30px;
@@ -254,54 +271,206 @@
             color: white;
         }
 
-        /* Mobil Uyumluluk */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
             }
+
             .content {
                 padding: 25px;
             }
+
             body {
                 padding: 10px;
             }
+
             .container {
-                box-shadow: 8px 8px 0px rgba(0,0,0,1);
+                box-shadow: 8px 8px 0px rgba(0, 0, 0, 1);
             }
+
             .header {
                 padding: 30px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
             <div class="header-content">
                 <h1>Kuyumcu Haritam</h1>
-                <div class="subtitle">GİZLİLİK POLİTİKASI & YASAL METİN</div>
+                <div class="subtitle">GİZLİLİK POLİTİKASI & KULLANIM KOŞULLARI</div>
             </div>
         </div>
 
         <div class="content">
             <div class="update-date">
-                Son Güncelleme: 1 Ocak 2026
+                Son Güncelleme: 7 Ocak 2026
             </div>
 
             <p>
-                <strong>Kuyumcu Haritam</strong> uygulamasını tercih ettiğiniz için teşekkür ederiz. Gizliliğiniz, bizim için sadece bir yasal zorunluluk değil, yapısal bir önceliktir. Aşağıdaki metin, verilerinizin nasıl işlendiğini şeffaf bir şekilde açıklamaktadır.
+                <strong>Kuyumcu Haritam</strong> uygulamasını tercih ettiğiniz için teşekkür ederiz. Gizliliğiniz, bizim
+                için sadece bir yasal zorunluluk değil, yapısal bir önceliktir. Aşağıdaki metin, verilerinizin nasıl
+                işlendiğini ve hizmet koşullarını şeffaf bir şekilde açıklamaktadır.
             </p>
 
-            <h2>1. Toplanan Bilgiler</h2>
-            
-            <h3>1.1 Kullanıcı Tarafından Sağlananlar</h3>
+            <!-- SORUMLULUK REDDİ - EN ÜST KISIM -->
+            <div class="disclaimer-box">
+                <h3>⚠️ ÖNEMLİ SORUMLULUK REDDİ</h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-top: 20px;">
+                    <strong>Kuyumcu Haritam</strong>, kullanıcılar arasında bilgi paylaşımı ve iletişim sağlayan bir
+                    <strong>ARACILIK PLATFORMUDUR</strong>. Platform, kullanıcılar arasında gerçekleşen hiçbir
+                    alışveriş, ticari işlem veya anlaşmada taraf değildir ve bu işlemlerden doğan hiçbir sorumluluk
+                    kabul etmez.
+                </p>
+                <ul
+                    style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); color: #fff; margin-top: 20px;">
+                    <li style="color: #fff;">Platform, kullanıcıların paylaştığı fiyat bilgilerinin doğruluğunu garanti
+                        etmez</li>
+                    <li style="color: #fff;">Kullanıcılar arası tüm işlemler, tarafların kendi sorumluluğundadır</li>
+                    <li style="color: #fff;">Platform, kullanıcıların kimlik doğrulamasından sorumlu değildir</li>
+                    <li style="color: #fff;">Dolandırıcılık, hırsızlık veya yasadışı faaliyetlerden platform sorumlu
+                        tutulamaz</li>
+                </ul>
+            </div>
+
+            <h2>1. Platform Tanımı ve Hizmet Kapsamı</h2>
+
+            <h3>1.1 Platform Nedir?</h3>
+            <p>
+                Kuyumcu Haritam, kullanıcıların altın fiyatlarını paylaşabildiği, kuyumcu konumlarını işaretleyebildiği
+                ve birbirleriyle iletişim kurabileceği bir <strong>bilgi paylaşım platformudur</strong>. Platform:
+            </p>
+            <ul>
+                <li><strong>TİCARİ BİR KURULUŞ DEĞİLDİR</strong></li>
+                <li>Altın alım-satımı yapmaz</li>
+                <li>Fiyat garantisi vermez</li>
+                <li>Aracılık komisyonu almaz</li>
+                <li>Kullanıcılar arası anlaşmalarda taraf değildir</li>
+            </ul>
+
+            <h3>1.2 Platform Sorumluluğu</h3>
+            <div class="highlight highlight-red">
+                <strong>🚫 PLATFORM SORUMLU DEĞİLDİR:</strong>
+                <ul style="margin-top: 15px;">
+                    <li>Kullanıcıların paylaştığı fiyat bilgilerinin doğruluğundan</li>
+                    <li>Kullanıcılar arası yapılan alışverişlerden</li>
+                    <li>Sahte altın, dolandırıcılık veya hırsızlık olaylarından</li>
+                    <li>Kullanıcıların birbirlerine verdiği zararlardan</li>
+                    <li>Piyasa fiyat değişimlerinden kaynaklanan kayıplardan</li>
+                    <li>Üçüncü şahısların neden olduğu her türlü zarardan</li>
+                </ul>
+            </div>
+
+            <h2>2. Kullanıcı Sorumlulukları</h2>
+
+            <h3>2.1 Alışveriş Güvenliği</h3>
+            <div class="highlight highlight-yellow">
+                <strong>⚠️ KULLANICI SORUMLULUĞU:</strong>
+                <p style="margin-top: 15px;">
+                    Platform üzerinden iletişime geçtiğiniz kişilerle yapacağınız tüm alışverişler <strong>TAMAMİYLE
+                        KENDİ RİSKİNİZDEDİR</strong>. Platform, karşı tarafın kimliğini, güvenilirliğini veya niyetini
+                    garanti etmez.
+                </p>
+            </div>
+
+            <p><strong>Kullanıcılar, aşağıdaki hususlardan bizzat sorumludur:</strong></p>
+            <ul>
+                <li>Karşı tarafın kimliğini doğrulamak</li>
+                <li>Altının gerçekliğini ve kalitesini kontrol etmek</li>
+                <li>Güvenli bir ortamda buluşmak</li>
+                <li>Yasal düzenlemelere uymak</li>
+                <li>Ödeme güvenliğini sağlamak</li>
+                <li>Gerekli belgeleri (fatura, sertifika vb.) talep etmek</li>
+            </ul>
+
+            <h3>2.2 Yasaklanan Faaliyetler</h3>
+            <p>Kullanıcılar, platformu aşağıdaki amaçlarla kullanamaz:</p>
+            <ul>
+                <li>Yasadışı altın ticareti</li>
+                <li>Dolandırıcılık veya sahtecilik</li>
+                <li>Kara para aklama</li>
+                <li>Vergi kaçakçılığı</li>
+                <li>Kimlik hırsızlığı</li>
+                <li>Yanıltıcı bilgi paylaşımı</li>
+                <li>Spam veya taciz</li>
+            </ul>
+
+            <h2>3. Fiyat Bilgileri ve Garanti</h2>
+
+            <div class="highlight highlight-red">
+                <strong>💰 FİYAT GARANTİSİ YOKTUR:</strong>
+                <p style="margin-top: 15px;">
+                    Platform üzerinde görüntülenen tüm fiyat bilgileri, kullanıcılar tarafından paylaşılmaktadır.
+                    Platform:
+                </p>
+                <ul style="margin-top: 15px;">
+                    <li>Fiyatların doğruluğunu teyit etmez</li>
+                    <li>Fiyat garantisi vermez</li>
+                    <li>Piyasa fiyatlarını kontrol etmez</li>
+                    <li>Fiyat güncellemelerinden sorumlu değildir</li>
+                    <li>Fiyat farklılıklarından kaynaklanan kayıplardan sorumlu tutulamaz</li>
+                </ul>
+            </div>
+
+            <h3>3.1 Fiyat Değişimleri</h3>
+            <p>
+                Altın fiyatları anlık olarak değişebilir. Platform üzerinde gördüğünüz fiyatlar, paylaşıldığı andaki
+                fiyatlardır ve güncel olmayabilir. <strong>Alışveriş yapmadan önce mutlaka güncel fiyatı teyit
+                    edin.</strong>
+            </p>
+
+            <h2>4. Dolandırıcılık ve Güvenlik Uyarıları</h2>
+
+            <div class="disclaimer-box">
+                <h3>🛡️ GÜVENLİK ÖNERİLERİ</h3>
+                <p style="margin-top: 20px;">Platform, kullanıcılarını korumak için aşağıdaki güvenlik önlemlerini
+                    ŞİDDETLE tavsiye eder:</p>
+                <ul
+                    style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); color: #fff; margin-top: 20px;">
+                    <li style="color: #fff;"><strong>Tanımadığınız kişilere ön ödeme yapmayın</strong></li>
+                    <li style="color: #fff;"><strong>Buluşmalarınızı kalabalık ve güvenli yerlerde yapın</strong></li>
+                    <li style="color: #fff;"><strong>Altının gerçekliğini uzman bir kuyumcuya kontrol ettirin</strong>
+                    </li>
+                    <li style="color: #fff;"><strong>Şüpheli durumları derhal yetkililere bildirin</strong></li>
+                    <li style="color: #fff;"><strong>Kişisel bilgilerinizi (adres, banka bilgileri) paylaşmayın</strong>
+                    </li>
+                    <li style="color: #fff;"><strong>Çok ucuz fiyatlardan şüphelenin</strong></li>
+                </ul>
+            </div>
+
+            <h3>4.1 Dolandırıcılık Durumunda</h3>
+            <p>
+                Dolandırıcılık veya yasadışı faaliyet şüphesi durumunda:
+            </p>
+            <ul>
+                <li><strong>Derhal polise başvurun</strong> (155)</li>
+                <li>Platform yönetimine bildirin (carlmorline@gmail.com)</li>
+                <li>Tüm kanıtları (mesajlar, fotoğraflar) saklayın</li>
+                <li>Yasal işlemleri başlatın</li>
+            </ul>
+
+            <div class="highlight highlight-red">
+                <strong>⚖️ YASAL SORUMLULUK:</strong>
+                <p style="margin-top: 15px;">
+                    Dolandırıcılık veya yasadışı faaliyetlerden kaynaklanan tüm yasal sorumluluk, <strong>DOĞRUDAN
+                        İLGİLİ KULLANICILARA AİTTİR</strong>. Platform, bu tür durumlarda aracı sıfatıyla bile sorumlu
+                    tutulamaz.
+                </p>
+            </div>
+
+            <h2>5. Toplanan Bilgiler</h2>
+
+            <h3>5.1 Kullanıcı Tarafından Sağlananlar</h3>
             <ul>
                 <li><strong>Hesap Bilgileri:</strong> E-posta adresi, kullanıcı adı, şifre</li>
                 <li><strong>Profil Verileri:</strong> Profil fotoğrafı, biyografi</li>
                 <li><strong>İçerik Akışı:</strong> Kuyumcu lokasyonları, fiyat verileri, mesajlaşmalar</li>
+                <li><strong>İlan Bilgileri:</strong> Altın alış/satış ilanları, fotoğraflar, açıklamalar</li>
             </ul>
 
-            <h3>1.2 Otomatik Toplananlar</h3>
+            <h3>5.2 Otomatik Toplananlar</h3>
             <ul>
                 <li><strong>Konum Verisi:</strong> Sadece izin verildiğinde (Harita fonksiyonu için)</li>
                 <li><strong>Cihaz Kimliği:</strong> Model, OS sürümü, App sürümü</li>
@@ -310,11 +479,12 @@
             </ul>
 
             <div class="highlight">
-                <strong>⚠️ KRİTİK NOT:</strong> Konum bilgileriniz, cihazınızın GPS modülü üzerinden sadece sizin açık rızanızla alınır. Ayarlar menüsünden bu izni dilediğiniz an geri çekebilirsiniz.
+                <strong>⚠️ KRİTİK NOT:</strong> Konum bilgileriniz, cihazınızın GPS modülü üzerinden sadece sizin açık
+                rızanızla alınır. Ayarlar menüsünden bu izni dilediğiniz an geri çekebilirsiniz.
             </div>
 
-            <h2>2. Kullanım Amacı</h2>
-            
+            <h2>6. Kullanım Amacı</h2>
+
             <p>Veri mimarimiz şu amaçlar üzerine kuruludur:</p>
             <ul>
                 <li>Hizmet sürekliliği ve geliştirmesi</li>
@@ -322,99 +492,178 @@
                 <li>Canlı fiyat ve harita senkronizasyonu</li>
                 <li>Kullanıcılar arası iletişim köprüsü</li>
                 <li>Güvenlik protokollerinin uygulanması</li>
+                <li>Yasadışı faaliyetlerin tespiti ve önlenmesi</li>
             </ul>
 
-            <h2>3. Bilgi Paylaşımı</h2>
-            
-            <h3>3.1 Görünürlük</h3>
+            <h2>7. Bilgi Paylaşımı</h2>
+
+            <h3>7.1 Görünürlük</h3>
             <ul>
                 <li>Profiliniz ve paylaşımlarınız ağdaki diğer kullanıcılara açıktır.</li>
                 <li>Sohbet kayıtları alıcı ve gönderici arasında şifrelenir.</li>
+                <li>İlanlarınız tüm kullanıcılar tarafından görülebilir.</li>
             </ul>
 
-            <h3>3.2 Altyapı Sağlayıcılar</h3>
+            <h3>7.2 Altyapı Sağlayıcılar</h3>
             <ul>
                 <li><strong>Supabase:</strong> Backend ve Auth servisi</li>
                 <li><strong>Google Maps:</strong> Harita görselleştirme</li>
                 <li><strong>AdMob:</strong> Monetizasyon</li>
             </ul>
 
-            <h2>4. Veri Güvenliği</h2>
+            <h3>7.3 Yasal Yükümlülükler</h3>
+            <p>
+                Platform, yasal zorunluluk halinde (mahkeme kararı, resmi soruşturma vb.) kullanıcı bilgilerini yetkili
+                makamlara aktarma hakkını saklı tutar.
+            </p>
+
+            <h2>8. Veri Güvenliği</h2>
             <p>Sistem güvenliği için uygulanan standartlar:</p>
             <ul>
                 <li>Kriptografik şifreleme (Hash)</li>
                 <li>SSL/TLS veri tünelleme</li>
                 <li>RLS (Row Level Security) politikaları</li>
+                <li>Düzenli güvenlik güncellemeleri</li>
             </ul>
 
             <div class="highlight highlight-red">
-                <strong>🔒 GÜVENLİK BEYANI:</strong> Dijital evrende %100 güvenlik teknik olarak imkansızdır. Ancak, endüstri standardı koruma protokollerini eksiksiz uyguluyoruz.
+                <strong>🔒 GÜVENLİK BEYANI:</strong> Dijital evrende %100 güvenlik teknik olarak imkansızdır. Ancak,
+                endüstri standardı koruma protokollerini eksiksiz uyguluyoruz. Buna rağmen, veri ihlali durumunda
+                platform maksimum özen yükümlülüğü ile sınırlı sorumludur.
             </div>
 
-            <h2>5. Yasal Haklarınız (KVKK)</h2>
+            <h2>9. Yasal Haklarınız (KVKK)</h2>
             <p>Kanun kapsamında verileriniz üzerinde tam kontrole sahipsiniz:</p>
             <ul>
                 <li>Veri işleme sürecini sorgulama</li>
                 <li>Verilerin kopyasını talep etme</li>
                 <li>Hatalı kayıtları düzeltme</li>
                 <li><strong>Unutulma Hakkı:</strong> Hesabı ve verileri silme</li>
+                <li>Veri işlemenin durdurulmasını talep etme</li>
             </ul>
 
-            <h2>6. Çocuk Güvenliği</h2>
+            <h2>10. Çocuk Güvenliği</h2>
             <p>
-                Bu platform 13 yaş altı için tasarlanmamıştır. Reşit olmayan kullanıcılara ait veri tespiti durumunda kayıtlar derhal imha edilir.
+                Bu platform 18 yaş altı için tasarlanmamıştır. Reşit olmayan kullanıcılara ait veri tespiti durumunda
+                kayıtlar derhal imha edilir. Ebeveynler, çocuklarının internet kullanımını denetlemekle yükümlüdür.
             </p>
 
-            <h2>7. Çerezler (Cookies)</h2>
+            <h2>11. Çerezler (Cookies)</h2>
             <ul>
                 <li><strong>Oturum:</strong> Giriş sürekliliği için</li>
                 <li><strong>Tercihler:</strong> UX ayarlarının hatırlanması için</li>
                 <li><strong>Analitik:</strong> Anonim kullanım istatistikleri</li>
             </ul>
 
-            <h2>8. Reklam Politikası (AdMob)</h2>
+            <h2>12. Reklam Politikası (AdMob)</h2>
             <p>
                 Ücretsiz hizmet sürdürülebilirliği için Google AdMob kullanılmaktadır.
             </p>
-            
+
             <div class="highlight">
                 <strong>⚙️ TERCİHLERİ YÖNETİN:</strong>
                 <br><br>
-                Reklam kişiselleştirme ayarlarını cihazınızın <em>Ayarlar > Gizlilik > Reklamlar</em> menüsünden değiştirebilirsiniz.
+                Reklam kişiselleştirme ayarlarını cihazınızın <em>Ayarlar > Gizlilik > Reklamlar</em> menüsünden
+                değiştirebilirsiniz.
             </div>
 
-            <h2>9. İletişim & Destek</h2>
-            
+            <h2>13. Hizmet Değişiklikleri ve Sonlandırma</h2>
+
+            <h3>13.1 Değişiklik Hakkı</h3>
+            <p>
+                Platform, önceden haber vermeksizin:
+            </p>
+            <ul>
+                <li>Hizmet koşullarını değiştirme</li>
+                <li>Özellikleri ekleme/kaldırma</li>
+                <li>Kullanıcı hesaplarını askıya alma/silme</li>
+                <li>Hizmeti geçici veya kalıcı olarak sonlandırma</li>
+            </ul>
+            <p>hakkını saklı tutar.</p>
+
+            <h3>13.2 Hesap Askıya Alma</h3>
+            <p>
+                Platform, aşağıdaki durumlarda kullanıcı hesaplarını askıya alabilir veya silebilir:
+            </p>
+            <ul>
+                <li>Kullanım koşullarının ihlali</li>
+                <li>Yasadışı faaliyet şüphesi</li>
+                <li>Diğer kullanıcılara zarar verme</li>
+                <li>Spam veya kötüye kullanım</li>
+                <li>Sahte hesap tespiti</li>
+            </ul>
+
+            <h2>14. Uyuşmazlık Çözümü</h2>
+
+            <h3>14.1 Yetkili Mahkeme</h3>
+            <p>
+                Bu sözleşmeden doğan uyuşmazlıklarda <strong>İstanbul Mahkemeleri ve İcra Daireleri</strong> yetkilidir.
+            </p>
+
+            <h3>14.2 Kullanıcılar Arası Uyuşmazlıklar</h3>
+            <div class="highlight highlight-red">
+                <strong>⚖️ PLATFORM TARAF DEĞİLDİR:</strong>
+                <p style="margin-top: 15px;">
+                    Kullanıcılar arasında çıkan uyuşmazlıklarda platform taraf değildir ve arabuluculuk yapmaz. Tüm
+                    uyuşmazlıklar, ilgili kullanıcılar arasında veya yasal yollarla çözülmelidir.
+                </p>
+            </div>
+
+            <h2>15. İletişim & Destek</h2>
+
             <div class="contact-box">
                 <h3>Bize Ulaşın</h3>
                 <p>Veri sorumlusu ile doğrudan iletişim kanalları:</p>
-                
+
                 <div class="contact-info">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        <path
+                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                     </svg>
                     <span>carlmorline@gmail.com</span>
                 </div>
-                
+
                 <div class="contact-info">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        <path
+                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                     </svg>
                     <span>Uygulama İçi: Ayarlar > Destek</span>
                 </div>
             </div>
 
             <div style="margin-top: 30px; padding: 20px; border: 2px dashed var(--ink-color);">
-                <strong>KVKK & GDPR:</strong> Bu metin, uluslararası veri koruma standartlarına ve yerel mevzuata tam uyumluluk taahhüdüdür.
+                <strong>KVKK & GDPR:</strong> Bu metin, uluslararası veri koruma standartlarına ve yerel mevzuata tam
+                uyumluluk taahhüdüdür.
+            </div>
+
+            <div class="disclaimer-box" style="margin-top: 40px;">
+                <h3>📋 KABUL BEYANI</h3>
+                <p style="margin-top: 20px; font-size: 1.1rem;">
+                    Bu uygulamayı kullanarak, yukarıda belirtilen tüm koşulları okuduğunuzu, anladığınızı ve kabul
+                    ettiğinizi beyan edersiniz. Özellikle:
+                </p>
+                <ul
+                    style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); color: #fff; margin-top: 20px;">
+                    <li style="color: #fff;">Platformun bir aracılık servisi olduğunu,</li>
+                    <li style="color: #fff;">Kullanıcılar arası işlemlerden platform sorumlu olmadığını,</li>
+                    <li style="color: #fff;">Tüm alışverişlerin kendi sorumluluğunuzda olduğunu,</li>
+                    <li style="color: #fff;">Dolandırıcılık riskinin bulunduğunu,</li>
+                    <li style="color: #fff;">Gerekli güvenlik önlemlerini almanız gerektiğini</li>
+                </ul>
+                <p style="margin-top: 20px; font-size: 1.1rem;">
+                    <strong>KABUL EDİYORSUNUZ.</strong>
+                </p>
             </div>
         </div>
 
         <div class="footer">
-            <p>&copy; 2026 KUYUMCU HARİTAM // FORM FOLLOWS FUNCTION</p>
+            <p>&copy; 2026 KUYUMCU HARİTAM // BAĞIMSIZ BİLGİ PAYLAŞIM PLATFORMU</p>
             <p style="margin-top: 10px; opacity: 0.6; font-family: 'Inter', sans-serif; text-transform: none;">
-                v1.0 - Bağımsız Geliştirici Projesi
+                v1.0 - Bağımsız Geliştirici Projesi - Ticari Kuruluş Değildir
             </p>
         </div>
     </div>
 </body>
+
 </html>
