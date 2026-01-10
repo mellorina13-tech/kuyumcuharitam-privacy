@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesap Silme - Kuyumcu Haritam</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #FFA726 0%, #FFB74D 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .icon {
+            font-size: 64px;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        h1 {
+            color: #FFA726;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .warning-box {
+            background: #FFF3E0;
+            border-left: 4px solid #FF9800;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box strong {
+            color: #E65100;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #FFA726;
+            box-shadow: 0 0 0 3px rgba(255, 167, 38, 0.1);
+        }
+
+        input:disabled {
+            background: #f5f5f5;
+            cursor: not-allowed;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-primary {
+            background: #FFA726;
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background: #FF9800;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 167, 38, 0.3);
+        }
+
+        .btn-danger {
+            background: #f44336;
+            color: white;
+        }
+
+        .btn-danger:hover:not(:disabled) {
+            background: #d32f2f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(244, 67, 54, 0.3);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .message {
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            display: none;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .message.show {
+            display: block;
+        }
+
+        .message.success {
+            background: #E8F5E9;
+            color: #2E7D32;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .message.error {
+            background: #FFEBEE;
+            color: #C62828;
+            border-left: 4px solid #f44336;
+        }
+
+        .message.info {
+            background: #E3F2FD;
+            color: #1565C0;
+            border-left: 4px solid #2196F3;
+        }
+
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        .code-input {
+            text-align: center;
+            font-size: 1.5em;
+            letter-spacing: 0.5em;
+            font-weight: bold;
+        }
+
+        .resend-link {
+            text-align: center;
+            margin-top: 15px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .resend-link button {
+            background: none;
+            border: none;
+            color: #FFA726;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .resend-link button:hover {
+            color: #FF9800;
+        }
+
+        .resend-link button:disabled {
+            color: #ccc;
+            cursor: not-allowed;
+            text-decoration: none;
+        }
+
+        .timer {
+            color: #999;
+            font-size: 0.85em;
+        }
+
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #FFA726;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+            display: none;
+        }
+
+        .loader.show {
+            display: block;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            color: #888;
+            font-size: 0.85em;
+        }
+
+        .footer a {
+            color: #FFA726;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .icon {
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="icon">🗑️</div>
+            <h1>Hesap Silme</h1>
+            <p class="subtitle">Kuyumcu Haritam</p>
+        </div>
+
+        <div class="warning-box">
+            <strong>⚠️ Dikkat!</strong>
+            <p>Hesabınızı sildiğinizde tüm verileriniz kalıcı olarak silinecektir. Bu işlem geri alınamaz.</p>
+        </div>
+
+        <div id="message" class="message"></div>
+        <div id="loader" class="loader"></div>
+
+        <!-- Step 1: Email Input -->
+        <div id="step1" class="step active">
+            <div class="form-group">
+                <label for="email">E-posta Adresiniz</label>
+                <input type="email" id="email" placeholder="ornek@email.com" required>
+            </div>
+            <button class="btn btn-primary" onclick="sendVerificationCode()">
+                Doğrulama Kodu Gönder
+            </button>
+        </div>
+
+        <!-- Step 2: Verification Code -->
+        <div id="step2" class="step">
+            <div class="form-group">
+                <label for="code">Doğrulama Kodu</label>
+                <input type="text" id="code" class="code-input" placeholder="000000" maxlength="6" required>
+                <p style="color: #666; font-size: 0.9em; margin-top: 8px;">
+                    E-posta adresinize gönderilen 6 haneli kodu girin
+                </p>
+            </div>
+            <button class="btn btn-danger" onclick="verifyAndDelete()">
+                Hesabı Kalıcı Olarak Sil
+            </button>
+            <div class="resend-link">
+                <span class="timer" id="timer"></span>
+                <button id="resendBtn" onclick="resendCode()" disabled>
+                    Kodu Tekrar Gönder
+                </button>
+            </div>
+            <button class="btn btn-primary" onclick="goBack()" style="margin-top: 10px; background: #9E9E9E;">
+                Geri Dön
+            </button>
+        </div>
+
+        <!-- Step 3: Success -->
+        <div id="step3" class="step">
+            <div style="text-align: center;">
+                <div style="font-size: 64px; margin: 20px 0;">✅</div>
+                <h2 style="color: #4CAF50; margin-bottom: 15px;">Hesabınız Silindi</h2>
+                <p style="color: #666; margin-bottom: 20px;">
+                    Hesabınız ve tüm verileriniz başarıyla silindi. Kuyumcu Haritam'ı kullandığınız için teşekkür
+                    ederiz.
+                </p>
+                <p style="color: #999; font-size: 0.9em;">
+                    İsterseniz yeni bir hesap oluşturabilirsiniz.
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Kuyumcu Haritam</p>
+            <p><a href="https://kuyumcuharitam-privacy.vercel.app">Gizlilik Politikası</a></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        // Supabase configuration
+        const SUPABASE_URL = 'https://vxjbqbvpxjqpgqhfgxwl.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ4amJxYnZweGpxcGdxaGZneHdsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU5MDE4MTEsImV4cCI6MjA1MTQ3NzgxMX0.lHKJWBwwPEZMJPMXMfIXKEjQZWOOqrXCjDODNJNJONk';
+
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        let verificationCode = '';
+        let userEmail = '';
+        let resendTimer = null;
+        let resendSeconds = 60;
+
+        function showMessage(text, type) {
+            const messageEl = document.getElementById('message');
+            messageEl.textContent = text;
+            messageEl.className = `message ${type} show`;
+            setTimeout(() => {
+                messageEl.classList.remove('show');
+            }, 5000);
+        }
+
+        function showLoader(show) {
+            document.getElementById('loader').classList.toggle('show', show);
+        }
+
+        function showStep(stepNumber) {
+            document.querySelectorAll('.step').forEach(step => step.classList.remove('active'));
+            document.getElementById(`step${stepNumber}`).classList.add('active');
+        }
+
+        function generateCode() {
+            return Math.floor(100000 + Math.random() * 900000).toString();
+        }
+
+        function startResendTimer() {
+            resendSeconds = 60;
+            const resendBtn = document.getElementById('resendBtn');
+            const timerEl = document.getElementById('timer');
+            resendBtn.disabled = true;
+
+            resendTimer = setInterval(() => {
+                resendSeconds--;
+                timerEl.textContent = `(${resendSeconds}s)`;
+
+                if (resendSeconds <= 0) {
+                    clearInterval(resendTimer);
+                    resendBtn.disabled = false;
+                    timerEl.textContent = '';
+                }
+            }, 1000);
+        }
+
+        async function sendVerificationCode() {
+            const email = document.getElementById('email').value.trim();
+
+            if (!email) {
+                showMessage('Lütfen e-posta adresinizi girin', 'error');
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showMessage('Geçerli bir e-posta adresi girin', 'error');
+                return;
+            }
+
+            showLoader(true);
+
+            try {
+                // Check if user exists
+                const { data: users, error: userError } = await supabase
+                    .from('users')
+                    .select('id, email')
+                    .eq('email', email)
+                    .single();
+
+                if (userError || !users) {
+                    showLoader(false);
+                    showMessage('Bu e-posta adresiyle kayıtlı bir hesap bulunamadı', 'error');
+                    return;
+                }
+
+                userEmail = email;
+                verificationCode = generateCode();
+
+                // Send verification email using Supabase Edge Function or external service
+                // For now, we'll show the code in console (in production, send via email service)
+                console.log('Verification Code:', verificationCode);
+
+                // In production, you would call an edge function here:
+                // const { data, error } = await supabase.functions.invoke('send-verification-email', {
+                //     body: { email: userEmail, code: verificationCode }
+                // });
+
+                showLoader(false);
+                showMessage(`Doğrulama kodu ${email} adresine gönderildi. (Geliştirme: ${verificationCode})`, 'success');
+                showStep(2);
+                startResendTimer();
+
+            } catch (error) {
+                showLoader(false);
+                showMessage('Bir hata oluştu: ' + error.message, 'error');
+            }
+        }
+
+        async function resendCode() {
+            await sendVerificationCode();
+        }
+
+        async function verifyAndDelete() {
+            const code = document.getElementById('code').value.trim();
+
+            if (!code) {
+                showMessage('Lütfen doğrulama kodunu girin', 'error');
+                return;
+            }
+
+            if (code !== verificationCode) {
+                showMessage('Doğrulama kodu hatalı. Lütfen tekrar deneyin.', 'error');
+                return;
+            }
+
+            showLoader(true);
+
+            try {
+                // Get user ID
+                const { data: user, error: userError } = await supabase
+                    .from('users')
+                    .select('id')
+                    .eq('email', userEmail)
+                    .single();
+
+                if (userError || !user) {
+                    throw new Error('Kullanıcı bulunamadı');
+                }
+
+                const userId = user.id;
+
+                // Delete user data in order (due to foreign key constraints)
+
+                // 1. Delete messages
+                await supabase.from('direct_messages').delete().or(`sender_id.eq.${userId},receiver_id.eq.${userId}`);
+
+                // 2. Delete conversations
+                await supabase.from('conversations').delete().or(`user1_id.eq.${userId},user2_id.eq.${userId}`);
+
+                // 3. Delete listing alarms
+                await supabase.from('listing_alarms').delete().eq('user_id', userId);
+
+                // 4. Delete price alarms
+                await supabase.from('price_alarms').delete().eq('user_id', userId);
+
+                // 5. Delete gold listings
+                await supabase.from('gold_listings').delete().eq('user_id', userId);
+
+                // 6. Delete profile photo if exists
+                const { data: userData } = await supabase
+                    .from('users')
+                    .select('profile_photo_url')
+                    .eq('id', userId)
+                    .single();
+
+                if (userData?.profile_photo_url) {
+                    const fileName = userData.profile_photo_url.split('/').pop();
+                    await supabase.storage.from('profile-photos').remove([`${userId}/${fileName}`]);
+                }
+
+                // 7. Finally, delete user
+                const { error: deleteError } = await supabase
+                    .from('users')
+                    .delete()
+                    .eq('id', userId);
+
+                if (deleteError) {
+                    throw deleteError;
+                }
+
+                showLoader(false);
+                showStep(3);
+
+            } catch (error) {
+                showLoader(false);
+                showMessage('Hesap silinirken bir hata oluştu: ' + error.message, 'error');
+                console.error('Delete error:', error);
+            }
+        }
+
+        function goBack() {
+            document.getElementById('code').value = '';
+            showStep(1);
+            if (resendTimer) {
+                clearInterval(resendTimer);
+            }
+        }
+
+        // Allow Enter key to submit
+        document.getElementById('email').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendVerificationCode();
+        });
+
+        document.getElementById('code').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') verifyAndDelete();
+        });
+    </script>
+</body>
+
+</html>
