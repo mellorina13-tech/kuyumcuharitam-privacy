@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Başarılı - Kuyumcu Haritam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Bauhaus Renk Paleti */
+            --bg-color: #f4f4f0;
+            --ink-color: #1a1a1a;
+            --bauhaus-red: #D93025;
+            --bauhaus-blue: #0047BB;
+            --bauhaus-yellow: #FFD500;
+            --grid-line: 3px solid var(--ink-color);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--ink-color);
+            background-color: var(--bg-color);
+            padding: 40px 20px;
+            background-image: radial-gradient(var(--ink-color) 1px, transparent 1px);
+            background-size: 20px 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: #fff;
+            border: var(--grid-line);
+            box-shadow: 15px 15px 0px rgba(0, 0, 0, 1);
+            position: relative;
+            text-align: center;
+            padding: 50px 30px;
+        }
+
+        .icon-circle {
+            width: 100px;
+            height: 100px;
+            background: var(--bauhaus-yellow);
+            border: var(--grid-line);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            box-shadow: 4px 4px 0px var(--ink-color);
+        }
+
+        .icon-circle svg {
+            width: 50px;
+            height: 50px;
+            fill: var(--ink-color);
+        }
+
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            color: var(--ink-color);
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .highlight-box {
+            background: #f9f9f9;
+            border: 2px dashed var(--ink-color);
+            padding: 20px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--bauhaus-blue);
+            color: #fff;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            text-decoration: none;
+            padding: 15px 40px;
+            border: var(--grid-line);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 4px 4px 0px var(--ink-color);
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+
+        .btn:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px var(--ink-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="icon-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+            </svg>
+        </div>
+
+        <h1>Tebrikler!<br>Kayıt Oldunuz</h1>
+
+        <p>E-posta adresiniz başarıyla doğrulandı. Hesabınız artık aktif.</p>
+
+        <div class="highlight-box">
+            Artık uygulamaya geri dönüp giriş yapabilirsiniz.
+        </div>
+    </div>
+</body>
+
+</html>
